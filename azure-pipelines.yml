@@ -1,18 +1,15 @@
 jobs:
 - job: Windows
-  pool:
-    vmImage: VS2017-Win2016
+  pool: 'Default'
   steps:
   - template: build/azure-pipelines/win32/continuous-build-win32.yml
 
-- job: Linux
-  pool:
-    vmImage: 'Ubuntu-16.04'
+- job: Windows_Again
+  pool: 'Default'
   steps:
-  - template: build/azure-pipelines/linux/continuous-build-linux.yml
+  - template: build/azure-pipelines/win32/continuous-build-win32.yml
 
-- job: macOS
-  pool:
-    vmImage: macOS 10.13
+- job: You_Guessed_It_Windows
+  pool: 'Default'
   steps:
-  - template: build/azure-pipelines/darwin/continuous-build-darwin.yml
+  - template: build/azure-pipelines/win32/continuous-build-win32.yml
