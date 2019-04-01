@@ -4,27 +4,6 @@ steps:
   inputs:
     versionSpec: "8.12.0"
 - powershell: |
-    yarn
-  displayName: Install Dependencies
-- powershell: |
-    yarn gulp electron
-  displayName: Download Electron
-- powershell: |
-    yarn gulp hygiene
-  displayName: Run Hygiene Checks
-- powershell: |
-    yarn monaco-compile-check
-  displayName: Run Monaco Editor Checks
-- script: |
-    yarn strict-null-check
-  displayName: Run Strict Null Checks
-- powershell: |
-    yarn compile
-  displayName: Compile Sources
-- powershell: |
-    yarn download-builtin-extensions
-  displayName: Download Built-in Extensions
-- powershell: |
     .\scripts\test.bat --tfs "Unit Tests"
   displayName: Run Unit Tests
 - powershell: |
